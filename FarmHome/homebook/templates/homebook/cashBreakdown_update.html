@@ -1,0 +1,125 @@
+{% extends 'homebook/base.html' %}
+
+{% load static %}
+
+{% block title %}Cash Breakdown Table Update{% endblock %}
+
+{% block body %}
+
+<div class="row g-0 d-flex align-items-center">
+    <div class="col-lg-4 d-none d-lg-flex">
+        <div class="container fluid bg-info text-warning" style="width: 25rem;">
+            <div class="card card bg-dark text-right" style="width: 23rem;">
+                <h2 class="text-center text-warning">Cash Breakdown Table Update</h2>
+                <h3 class="text-center text-warning">Cash Breakdown Update</h3>
+                <form action="{% url 'homebook-cashBreakdown_create' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form }}
+
+
+                      <label for="formGroupExampleInput1" class="form-label"><strong>Cash Breakdown
+                                    Date</strong></label>
+                                <input style="height:40px;width:300px" type="datetime-local" class="form-control"
+                                       id="formGroupExampleInput1" placeholder="cashBreakdown_date" name="cashBreakdown_date">
+
+                       <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput2"
+                               class="form-label"><strong>Money</strong></label>
+                        <input style="height:40px;width:300px" type="text" class="form-control"
+                               id="formGroupExampleInput2"
+                               placeholder="money" name="money" value="">
+                    </div>
+
+
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput3"
+                               class="form-label"><strong>One Thaousads</strong></label>
+                        <input style="height:40px;width:300px" type="text" class="form-control"
+                               id="formGroupExampleInput3"
+                               placeholder="one_thousands" name="one_thousands" value="">
+                    </div>
+
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput4"
+                               class="form-label"><strong>Five Hundreds</strong></label>
+                        <input style="height:40px;width:300px" type="text" class="form-control"
+                               id="formGroupExampleInput4"
+                               placeholder="five_hundreds" name="five_hundreds" value="">
+                    </div>
+
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput5"
+                               class="form-label"><strong>Two Hundreds</strong></label>
+                        <input style="height:40px;width:300px" type="text" class="form-control"
+                               id="formGroupExampleInput5"
+                               placeholder="two_hundreds" name="two_hundreds" value="">
+                    </div>
+
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput6"
+                               class="form-label"><strong>One Hundreds</strong></label>
+                        <input style="height:40px;width:300px" type="text" class="form-control"
+                               id="formGroupExampleInput6"
+                               placeholder="one_hundreds" name="one_hundreds" value="">
+                    </div>
+
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput7"
+                               class="form-label"><strong>Fifties</strong></label>
+                        <input style="height:40px;width:300px" type="text" class="form-control"
+                               id="formGroupExampleInput7"
+                               placeholder="fifties" name="fifties" value="">
+                    </div>
+
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput8"
+                               class="form-label"><strong>Forties</strong></label>
+                        <input style="height:40px;width:300px" type="text" class="form-control"
+                               id="formGroupExampleInput8"
+                               placeholder="forties" name="forties" value="">
+                    </div>
+
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput9"
+                               class="form-label"><strong>Twenties</strong></label>
+                        <input style="height:40px;width:300px" type="text" class="form-control"
+                               id="formGroupExampleInput9"
+                               placeholder="twenties" name="twenties" value="">
+                    </div>
+
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput10"
+                               class="form-label"><strong>Tens</strong></label>
+                        <input style="height:40px;width:300px" type="text" class="form-control"
+                               id="formGroupExampleInput10"
+                               placeholder="tens" name="tens" value="">
+                    </div>
+
+                     <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput11"
+                               class="form-label"><strong>Fives</strong></label>
+                        <input style="height:40px;width:300px" type="text" class="form-control"
+                               id="formGroupExampleInput11"
+                               placeholder="fives" name="fives" value="">
+                    </div>
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput12"
+                               class="form-label"><strong>Ones</strong></label>
+                        <input style="height:40px;width:300px" type="text" class="form-control"
+                               id="formGroupExampleInput12"
+                               placeholder="ones" name="ones" value="">
+                    </div>
+
+                    <div class="container my-3">
+                        <button class="btn btn-primary" type="submit" value="Update" name="update"
+                                typeof="hover">Submit
+                        </button>
+                        <a class="btn btn-warning bg-success btn-info block-lg"
+                           href="{% url 'homebook-cashBreakdown' %}">Return</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
