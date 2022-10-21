@@ -5,116 +5,250 @@
 {% block title %}Cash Breakdown Table Update{% endblock %}
 
 {% block body %}
-
 <div class="row g-0 d-flex align-items-center">
     <div class="col-lg-4 d-none d-lg-flex">
-        <div class="container fluid bg-info text-warning" style="width: 25rem;">
-            <div class="card card bg-dark text-right" style="width: 23rem;">
-                <h2 class="text-center text-warning">Cash Breakdown Table Update</h2>
-                <h3 class="text-center text-warning">Cash Breakdown Update</h3>
+        <div class="container fluid bg-info text-light" style="width: 3rem;">
+            <div class="card card bg-primary text-right" style="width: 50rem;">
+                <h2 class="text-center text-light">Cash Breakdown Table Update</h2>
+                <h3 class="text-center text-light">Cash Breakdown Update</h3>
                 <form action="{% url 'homebook-cashBreakdown_create' %}" method="POST">
                     {% csrf_token %}
                     {{ form }}
 
 
-                      <label for="formGroupExampleInput1" class="form-label"><strong>Cash Breakdown
-                                    Date</strong></label>
-                                <input style="height:40px;width:300px" type="datetime-local" class="form-control"
-                                       id="formGroupExampleInput1" placeholder="cashBreakdown_date" name="cashBreakdown_date">
-
-                       <div class="col-sm col-sm">
-                        <label for="formGroupExampleInput2"
-                               class="form-label"><strong>Money</strong></label>
-                        <input style="height:40px;width:300px" type="text" class="form-control"
-                               id="formGroupExampleInput2"
-                               placeholder="money" name="money" value="">
-                    </div>
-
-
+                    <label for="formGroupExampleInput1" class="form-label"><strong>Cash Breakdown
+                        Date</strong></label>
+                    <input style="height:40px;width:300px" type="datetime-local" class="form-control"
+                           id="formGroupExampleInput1" placeholder="cashBreakdown_date" name="cashBreakdown_date">
                     <div class="col-sm col-sm">
-                        <label for="formGroupExampleInput3"
-                               class="form-label"><strong>One Thaousads</strong></label>
-                        <input style="height:40px;width:300px" type="text" class="form-control"
-                               id="formGroupExampleInput3"
-                               placeholder="one_thousands" name="one_thousands" value="">
+                        <label for="formGroupExampleInput2" class="form-label"><strong>Money Notes</strong></label>
+                        <select style="height:40px;width:300px" class="form-control" id="formGroupExampleInput2"
+                                name="money_Notes">
+                            <div class="col-sm-3">
+                                <option selected disabled>choose option</option>
+                                <option value="Thousands">1000</option>
+                                <option value="Five_hundreds">500</option>
+                                <option value="Two_hundreds">200</option>
+                                <option value="One_hundreds">100</option>
+                                <option value="Fifties">50</option>
+                                <option value="Forties">40</option>
+                                <option value="Twenties">20</option>
+                                <option value="Tens">10</option>
+                                <option value="Fives">5</option>
+                                <option value="Ones">1</option>
+                            </div>
+                        </select>
                     </div>
-
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput3" class="form-label"><strong>Amount
+                        </strong></label>
+                        <input style="height:40px;width:300px" type="number" min="1" max="1000000"
+                               class="form-control"
+                               id="formGroupExampleInput3"
+                               placeholder="amount" name="amount" value="">
+                    </div>
                     <div class="col-sm col-sm">
                         <label for="formGroupExampleInput4"
-                               class="form-label"><strong>Five Hundreds</strong></label>
-                        <input style="height:40px;width:300px" type="text" class="form-control"
+                               class="form-label"><strong>Thousands</strong></label>
+                        <input style="height:40px;width:300px" type="number" min="1" max="101"
+                               class="form-control"
                                id="formGroupExampleInput4"
-                               placeholder="five_hundreds" name="five_hundreds" value="">
-                    </div>
-
-                    <div class="col-sm col-sm">
-                        <label for="formGroupExampleInput5"
-                               class="form-label"><strong>Two Hundreds</strong></label>
-                        <input style="height:40px;width:300px" type="text" class="form-control"
-                               id="formGroupExampleInput5"
-                               placeholder="two_hundreds" name="two_hundreds" value="">
-                    </div>
-
-                    <div class="col-sm col-sm">
-                        <label for="formGroupExampleInput6"
-                               class="form-label"><strong>One Hundreds</strong></label>
-                        <input style="height:40px;width:300px" type="text" class="form-control"
-                               id="formGroupExampleInput6"
-                               placeholder="one_hundreds" name="one_hundreds" value="">
-                    </div>
-
-                    <div class="col-sm col-sm">
-                        <label for="formGroupExampleInput7"
-                               class="form-label"><strong>Fifties</strong></label>
-                        <input style="height:40px;width:300px" type="text" class="form-control"
-                               id="formGroupExampleInput7"
-                               placeholder="fifties" name="fifties" value="">
-                    </div>
-
-                    <div class="col-sm col-sm">
-                        <label for="formGroupExampleInput8"
-                               class="form-label"><strong>Forties</strong></label>
-                        <input style="height:40px;width:300px" type="text" class="form-control"
-                               id="formGroupExampleInput8"
-                               placeholder="forties" name="forties" value="">
-                    </div>
-
-                    <div class="col-sm col-sm">
-                        <label for="formGroupExampleInput9"
-                               class="form-label"><strong>Twenties</strong></label>
-                        <input style="height:40px;width:300px" type="text" class="form-control"
-                               id="formGroupExampleInput9"
-                               placeholder="twenties" name="twenties" value="">
-                    </div>
-
-                    <div class="col-sm col-sm">
-                        <label for="formGroupExampleInput10"
-                               class="form-label"><strong>Tens</strong></label>
-                        <input style="height:40px;width:300px" type="text" class="form-control"
-                               id="formGroupExampleInput10"
-                               placeholder="tens" name="tens" value="">
-                    </div>
-
-                     <div class="col-sm col-sm">
-                        <label for="formGroupExampleInput11"
-                               class="form-label"><strong>Fives</strong></label>
-                        <input style="height:40px;width:300px" type="text" class="form-control"
-                               id="formGroupExampleInput11"
-                               placeholder="fives" name="fives" value="">
+                               placeholder="thousands" name="thousands" value="">
                     </div>
                     <div class="col-sm col-sm">
-                        <label for="formGroupExampleInput12"
-                               class="form-label"><strong>Ones</strong></label>
-                        <input style="height:40px;width:300px" type="text" class="form-control"
-                               id="formGroupExampleInput12"
-                               placeholder="ones" name="ones" value="">
+                        <label for="formGroupExampleInput5" class="form-label"><strong>Five_hundreds
+                        </strong></label>
+                        <select style="height:40px;width:300px" class="form-control"
+                                id="formGroupExampleInput5"
+                                name="five_hundreds">
+                            <option selected disabled>choose option</option>
+                            <option value="Zero">0</option>
+                            <option value="One">1</option>
+                            <option value="Two">2</option>
+                            <option value="Three">3</option>
+                            <option value="Four">4</option>
+                            <option value="Five">5</option>
+                            <option value="Six">6</option>
+                            <option value="Seven">7</option>
+                            <option value="Eight">8</option>
+                            <option value="Nine">9</option>
+                            <option value="Ten">10</option>
+                            <option value=""></option>
+                        </select>
                     </div>
-
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput6" class="form-label"><strong>Two_hundreds
+                        </strong></label>
+                        <select style="height:40px;width:300px" class="form-control"
+                                id="formGroupExampleInput6"
+                                name="two_hundreds">
+                            <option selected disabled>choose option</option>
+                            <option value="Zero">0</option>
+                            <option value="One">1</option>
+                            <option value="Two">2</option>
+                            <option value="Three">3</option>
+                            <option value="Four">4</option>
+                            <option value="Five">5</option>
+                            <option value="Six">6</option>
+                            <option value="Seven">7</option>
+                            <option value="Eight">8</option>
+                            <option value="Nine">9</option>
+                            <option value="Ten">10</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput7" class="form-label"><strong>One_hundreds
+                        </strong></label>
+                        <select style="height:40px;width:300px" class="form-control"
+                                id="formGroupExampleInput7"
+                                name="one_hundreds">
+                            <option selected disabled>choose option</option>
+                            <option value="Zero">0</option>
+                            <option value="One">1</option>
+                            <option value="Two">2</option>
+                            <option value="Three">3</option>
+                            <option value="Four">4</option>
+                            <option value="Five">5</option>
+                            <option value="Six">6</option>
+                            <option value="Seven">7</option>
+                            <option value="Eight">8</option>
+                            <option value="Nine">9</option>
+                            <option value="Ten">10</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput8" class="form-label"><strong>Fifties
+                        </strong></label>
+                        <select style="height:40px;width:300px" class="form-control"
+                                id="formGroupExampleInput8"
+                                name="fifties">
+                            <option selected disabled>choose option</option>
+                            <option value="Zero">0</option>
+                            <option value="One">1</option>
+                            <option value="Two">2</option>
+                            <option value="Three">3</option>
+                            <option value="Four">4</option>
+                            <option value="Five">5</option>
+                            <option value="Six">6</option>
+                            <option value="Seven">7</option>
+                            <option value="Eight">8</option>
+                            <option value="Nine">9</option>
+                            <option value="Ten">10</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput9" class="form-label"><strong>Forties
+                        </strong></label>
+                        <select style="height:40px;width:300px" class="form-control"
+                                id="formGroupExampleInput9"
+                                name="forties">
+                            <option selected disabled>choose option</option>
+                            <option value="Zero">0</option>
+                            <option value="One">1</option>
+                            <option value="Two">2</option>
+                            <option value="Three">3</option>
+                            <option value="Four">4</option>
+                            <option value="Five">5</option>
+                            <option value="Six">6</option>
+                            <option value="Seven">7</option>
+                            <option value="Eight">8</option>
+                            <option value="Nine">9</option>
+                            <option value="Ten">10</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput10" class="form-label"><strong>Twenties
+                        </strong></label>
+                        <select style="height:40px;width:300px" class="form-control"
+                                id="formGroupExampleInput10"
+                                name="twenties">
+                            <option selected disabled>choose option</option>
+                            <option value="Zero">0</option>
+                            <option value="One">1</option>
+                            <option value="Two">2</option>
+                            <option value="Three">3</option>
+                            <option value="Four">4</option>
+                            <option value="Five">5</option>
+                            <option value="Six">6</option>
+                            <option value="Seven">7</option>
+                            <option value="Eight">8</option>
+                            <option value="Nine">9</option>
+                            <option value="Ten">10</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput11" class="form-label"><strong>Tens
+                        </strong></label>
+                        <select style="height:40px;width:300px" class="form-control"
+                                id="formGroupExampleInput11"
+                                name="tens">
+                            <option selected disabled>choose option</option>
+                            <option value="Zero">0</option>
+                            <option value="One">1</option>
+                            <option value="Two">2</option>
+                            <option value="Three">3</option>
+                            <option value="Four">4</option>
+                            <option value="Five">5</option>
+                            <option value="Six">6</option>
+                            <option value="Seven">7</option>
+                            <option value="Eight">8</option>
+                            <option value="Nine">9</option>
+                            <option value="Ten">10</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput12" class="form-label"><strong>Fives
+                        </strong></label>
+                        <select style="height:40px;width:300px" class="form-control"
+                                id="formGroupExampleInput12"
+                                name="fives">
+                            <option selected disabled>choose option</option>
+                            <option value="Zero">0</option>
+                            <option value="One">1</option>
+                            <option value="Two">2</option>
+                            <option value="Three">3</option>
+                            <option value="Four">4</option>
+                            <option value="Five">5</option>
+                            <option value="Six">6</option>
+                            <option value="Seven">7</option>
+                            <option value="Eight">8</option>
+                            <option value="Nine">9</option>
+                            <option value="Ten">10</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="col-sm col-sm">
+                        <label for="formGroupExampleInput13" class="form-label"><strong>Ones
+                        </strong></label>
+                        <select style="height:40px;width:300px" class="form-control"
+                                id="formGroupExampleInput13"
+                                name="ones">
+                            <option selected disabled>choose option</option>
+                            <option value="Zero">0</option>
+                            <option value="One">1</option>
+                            <option value="Two">2</option>
+                            <option value="Three">3</option>
+                            <option value="Four">4</option>
+                            <option value="Five">5</option>
+                            <option value="Six">6</option>
+                            <option value="Seven">7</option>
+                            <option value="Eight">8</option>
+                            <option value="Nine">9</option>
+                            <option value="Ten">10</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
                     <div class="container my-3">
-                        <button class="btn btn-primary" type="submit" value="Update" name="update"
+                        <button class="btn btn-dark" type="submit" value="Update" name="update"
                                 typeof="hover">Submit
                         </button>
-                        <a class="btn btn-warning bg-success btn-info block-lg"
+                        <a class="btn btn-warning bg-secondary btn-info block-lg"
                            href="{% url 'homebook-cashBreakdown' %}">Return</a>
                     </div>
                 </form>

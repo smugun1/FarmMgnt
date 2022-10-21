@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Muster, CashBreakdown
+from .models import Employee, CashBreakdown
 
-admin.site.register(Muster)
+admin.site.register(Employee)
 admin.site.register(CashBreakdown)

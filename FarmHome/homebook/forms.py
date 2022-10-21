@@ -1,5 +1,5 @@
 from django import forms
-from .models import CashBreakdown, Muster
+from .models import CashBreakdown, Employee
 
 
 class TaskForm(forms.ModelForm):
@@ -7,7 +7,7 @@ class TaskForm(forms.ModelForm):
         attrs={'placeholder': 'Add task here...'}))
 
     class Meta:
-        model = Muster
+        model = Employee
         fields = '__all__'
 
 

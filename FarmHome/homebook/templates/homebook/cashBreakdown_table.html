@@ -1,10 +1,10 @@
 {% extends 'homebook/base.html' %}
 
+{% load static %}
+
 {% include 'cashBreakdown/update.html' %}
 
 {% include 'cashBreakdown/delete.html' %}
-
-{% load static %}
 
 
 <title>{% block title %}Cash Breakdown Table{% endblock %}</title>
@@ -12,11 +12,11 @@
 <link rel='stylesheet' href="{% static 'style.css' %}" type='text/css'>
 
 {% block body %}
-<div class="container-fluid text-right card bg-secondary card-dark mx-0 px-0 my-0 py-0">
+<div class="container-fluid text-right card bg-info card-dark mx-0 px-0 my-0 py-0">
     <h2 class="text-center bg-dark text-warning">Cash Breakdown</h2>
     <h3 class="text-center bg-dark text-warning">Cash Breakdown Table</h3>
     <div class="border p-3">
-        <a class="btn btn-warning bg-primary btn-info block-lg" href="{% url 'homebook-cashBreakdown_create' %}">Add</a>
+        <a class="btn btn-warning bg-primary btn-info block-lg" href="{%url 'homebook-cashBreakdown_update' %}">Add</a>
         <form action="" method="POST">
             {% csrf_token %}
 
@@ -24,37 +24,39 @@
         <table class="table id=CashBreakdown align-middle text-warning bg-dark">
             <tr>
                 <th>Cash Breakdown Date</th>
-                <th>money</th>
-                <th>one thousands</th>
-                <th>five hundreds</th>
-                <th>two hundreds</th>
-                <th>one hundreds</th>
-                <th>fifties</th>
-                <th>forties</th>
-                <th>twenties</th>
-                <th>tens</th>
-                <th>fives</th>
-                <th>ones</th>
+                <th>Money Notes</th>
+                <th>Amount</th>
+                <th>Thousands</th>
+                <th>Five_hundreds</th>
+                <th>Two_hundreds</th>
+                <th>One_hundreds</th>
+                <th>Fifties</th>
+                <th>Forties</th>
+                <th>Twenties</th>
+                <th>Tens</th>
+                <th>Fives</th>
+                <th>Ones</th>
                 <th>Update</th>
                 <th>Delete</th>
             </tr>
 
-            {% for note in CashBreakdown %}
+            {% for c in CashBreakdown %}
 
             <tr>
 
                 <td>{{note.cashBreakdown_date}}</td>
-                <td>{{note.money}}</td>
-                <td>{{note.one_thousands}}</td>
-                <td>{{note.five_hundreds}}</td>
-                <td>{{note.two_hundreds}}</td>
-                <td>{{note.one_hundreds}}</td>
-                 <td>{{note.fifties}}</td>
-                <td>{{note.forties}}</td>
-                <td>{{note.twenties}}</td>
-                <td>{{note.tens}}</td>
-                <td>{{note.fives}}</td>
-                <td>{{note.ones}}</td>
+                <td>{{note.money_Notes}}</td>
+                <td>{{note.amount}}</td>
+                <td>{{note.Thousands}}</td>
+                <td>{{note.Five_hundreds}}</td>
+                <td>{{note.Two_hundreds}}</td>
+                <td>{{note.One_hundreds}}</td>
+                <td>{{note.Fifties}}</td>
+                <td>{{note.Forties}}</td>
+                <td>{{note.Twenties}}</td>
+                <td>{{note.Tens}}</td>
+                <td>{{note.Fives}}</td>
+                <td>{{note.Ones}}</td>
                 <td><a class="btn btn-info btn-block bg-primary btn btn-info"
                        href="{% url 'cashBreakdown-update' note.id %}">Edit</a></td>
                 <td><a class="btn btn-info btn-block bg-danger btn btn-info"
@@ -75,6 +77,8 @@
                 <th>#</th>
                 <th>#</th>
                 <th>#</th>
+                <th>#</th>
+
             </tr>
         </table>
     </div>
