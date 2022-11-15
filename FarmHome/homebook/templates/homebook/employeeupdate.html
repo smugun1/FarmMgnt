@@ -1,0 +1,116 @@
+{% extends 'homebook/base.html' %}
+
+{% load static %}
+
+{% block title %}Employee Update Table{% endblock %}
+
+{% block body %}
+
+<div class="row g-4 d-flex align-items-center">
+    <div class="col-lg-8 d-none d-lg-flex">
+        <div class="container fluid bg-success text-light" style="width: 30rem;">
+            <div class="card card bg-dark text-right" style="width: 25rem;">
+                <h2 class="text-center text-warning">Employee Update Table</h2>
+                <h3 class="text-center text-warning">Employee Update</h3>
+                <form action="{% url 'homebook-employee_create' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form }}
+
+
+                    <label for="formGroupExampleInput1" class="form-label"><strong>National Identity No.</strong></label>
+                    <input style="height:40px;width:300px" type="number" class="form-control" id="formGroupExampleInput1" placeholder="national_id"
+                                   name="national_id" value="">
+
+                    <div class="row g-3">
+                        <div class="col-sm col-sm">
+                            <label for="formGroupExampleInput3" class="form-label"><strong>First_Name
+                            </strong></label>
+                            <input style="height:40px;width:300px" type="text"
+                                   class="form-control" id="formGroupExampleInput3" placeholder="first_name"
+                                   name="first_name" value="">
+                        </div>
+
+                        <div class="col-sm col-sm">
+                            <label for="formGroupExampleInput4"
+                                   class="form-label"><strong>Other Name</strong></label>
+                            <input style="height:40px;width:300px" type="text"
+                                   class="form-control" id="formGroupExampleInput4" placeholder="Other_names"
+                                   name="Other_names"
+                                   value="">
+                        </div>
+
+                        <div class="col-sm col-sm">
+                            <label for="formGroupExampleInput5"
+                                   class="form-label"><strong>Last_Name</strong></label>
+                            <input style="height:40px;width:300px" type="text"
+                                   class="form-control" id="formGroupExampleInput5" placeholder="last_name"
+                                   name="last_name" value="">
+                        </div>
+
+                        <div class="col-sm col-sm">
+                            <label for="formGroupExampleInput6"
+                                   class="form-label"><strong>Pay Amount</strong></label>
+                            <input style="height:40px;width:300px" type="number"
+                                   class="form-control" id="formGroupExampleInput6" placeholder="pay_amount"
+                                   name="pay_amount" value="">
+                        </div>
+                        <div class="form-group">
+                <label class="form-label">Company:</label>
+
+                <select style="height:40px;width:300px" class="form-control" id="formGroupExampleInput7"
+                                name="Company">
+                            <option selected disabled>choose option</option>
+                            <option value="Mogoon Farm">Mogoon Farm</option>
+                            <option value="Morombi Escarpment">Morombi Escarpment</option>
+                            <option value="Kamatargui Guesthouse">Kamatargui Guesthouse</option>
+                        </select>
+            </div>
+                           <br>
+            <p style="color:crimson">Company not available?</p>
+            <button class="btn-info btn-sm" onclick="location.href='/members/signup'">Click Here</button>
+
+                       <div class="col-sm col-sm">
+                            <label for="formGroupExampleInput9"
+                                   class="form-label"><strong>Timestamp Last Updatede</strong></label>
+                            <input style="height:40px;width:300px" type="time"
+                                   class="form-control" id="formGroupExampleInput9" placeholder="timestamp_last_updated"
+                                   name="timestamp_last_updated" value="">
+                        </div>
+                        <div class="col-sm col-sm">
+                            <label for="formGroupExampleInput10"
+                                   class="form-label"><strong>Timestamp Added</strong></label>
+                            <input style="height:40px;width:300px" type="time"
+                                   class="form-control"
+                                   id="formGroupExampleInput10" placeholder="timestamp_added"
+                                   name="timestamp_added" value="">
+                        </div>
+                        <div class="col-sm col-sm">
+                            <label for="formGroupExampleInput11"
+                                   class="form-label"><strong>Employee Email</strong></label>
+                            <input style="height:40px;width:300px" type="email"
+                                   class="form-control" id="formGroupExampleInput11"
+                                   placeholder="employee_email" name="employee_email" value="">
+                        </div>
+                        <div class="col-sm col-sm">
+                            <label for="formGroupExampleInput12"
+                                   class="form-label"><strong>Employee phone
+                            </strong></label>
+                            <input style="height:40px;width:300px" type="number"
+                                   class="form-control" id="formGroupExampleInput12" placeholder="employee_phone"
+                                   name="employee_phone" value="">
+                        </div>
+
+                        <div class="container my-3">
+                            <button class="btn btn-info" type="submit" value="Update" name="update"
+                                    typeof="hover">Submit
+                            </button>
+                            <a class="btn btn-warning bg-warning btn-info block-lg"
+                               href="{% url 'homebook-employee' %}">Return</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

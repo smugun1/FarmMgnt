@@ -22,8 +22,8 @@ admin.site.site_title = "Farm Reports"
 admin.site.site_index = "Home Farm site"
 
 urlpatterns = [
-                  path('admin/', admin.site.urls),
                   path('', include('homebook.urls')),
+                  path('admin/', admin.site.urls),
                   path('members/', include('django.contrib.auth.urls')),
-                  # path('members/', include('members')),
+                  path('members/', include('members.urls')),
               ] + staticfiles_urlpatterns()

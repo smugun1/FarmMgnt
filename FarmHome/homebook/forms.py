@@ -17,4 +17,7 @@ class UpdateCashBreakdownForm(forms.ModelForm):
         fields = '__all__'
 
 
-
+class UpdateEmployeeForm(forms.ModelForm):
+    class Meta:
+        model = Employee
+        fields = '__all__'

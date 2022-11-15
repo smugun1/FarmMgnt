@@ -21,16 +21,67 @@
             {% csrf_token %}
 
         </form>
-        <table class="table id=CashBreakdown align-middle text-warning bg-dark">
+
+        <table class="table border=1 id=CashBreakdown align-middle text-warning bg-dark">
             <tr>
                 <th>Cash Breakdown Date</th>
-                <th>Money Notes</th>
                 <th>Amount</th>
                 <th>Thousands</th>
                 <th>Five_hundreds</th>
                 <th>Two_hundreds</th>
                 <th>One_hundreds</th>
                 <th>Fifties</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+
+            {% for note in cashBreakdown %}
+
+            <tr>
+                <td>{{note.cashBreakdown_date}}</td>
+                <td>{{note.amount}}</td>
+                <td>{{note.One_thousands}}</td>
+                <td>{{note.Five_hundreds}}</td>
+                <td>{{note.Two_hundreds}}</td>
+                <td>{{note.One_hundreds}}</td>
+                <td>{{note.Fifties}}</td>
+                <td><a class="btn btn-info btn-block bg-primary btn btn-info"
+                       href="{% url 'cashBreakdown-update' note.id %}">Edit</a></td>
+                <td><a class="btn btn-info btn-block bg-danger btn btn-info"
+                       href="{% url 'cashBreakdown-delete' note.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+
+
+            <tr>
+
+                <th>Totals</th>
+                <td id="Amount.">
+                    Total:
+                </td>
+                <td id="Thousands">
+                    Total:
+                </td>
+                <td id="Five_hundreds">
+                    Total:
+                </td>
+                <td id="Two_hundreds">
+                    Total:
+                </td>
+                <td id="One_hundreds">
+                    Total:
+                </td>
+                <td id="Fifties">
+                    Total:
+                </td>
+                <th></th>
+                <th></th>
+            </tr>
+        </table>
+        <table class="table border=1 id=CashBreakdown align-middle text-warning bg-dark">
+            <tr>
+                <th>Cash Breakdown Date</th>
+                <th>Amount</th>
                 <th>Forties</th>
                 <th>Twenties</th>
                 <th>Tens</th>
@@ -39,19 +90,10 @@
                 <th>Update</th>
                 <th>Delete</th>
             </tr>
-
-            {% for c in CashBreakdown %}
-
+            {% for note in cashBreakdown %}
             <tr>
-
                 <td>{{note.cashBreakdown_date}}</td>
-                <td>{{note.money_Notes}}</td>
                 <td>{{note.amount}}</td>
-                <td>{{note.Thousands}}</td>
-                <td>{{note.Five_hundreds}}</td>
-                <td>{{note.Two_hundreds}}</td>
-                <td>{{note.One_hundreds}}</td>
-                <td>{{note.Fifties}}</td>
                 <td>{{note.Forties}}</td>
                 <td>{{note.Twenties}}</td>
                 <td>{{note.Tens}}</td>
@@ -65,23 +107,32 @@
             {% endfor %}
 
             <tr>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-                <th>#</th>
-
+                <td>Total Amount</td>
+                <td>#{{Total_amt.total}}</td>
+            </tr>
+            <tr>
+                <th>Totals</th>
+                <td id="Amount">
+                    Total:
+                </td>
+               <td id="Forties">
+                    Total:
+                </td>
+                <td id="Twenties">
+                    Total:
+                </td>
+                <td id="Tens">
+                    Total:
+                </td>
+                <td id="Fives">
+                    Total:
+                </td>
+                <td id="Ones">
+                    Total:
+                </td>
             </tr>
         </table>
-    </div>
+       </div>
 </div>
 
 {% endblock  %}

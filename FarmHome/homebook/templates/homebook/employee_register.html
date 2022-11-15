@@ -16,7 +16,7 @@
     <h2 class="text-center bg-dark text-warning">Employee</h2>
     <h3 class="text-center bg-dark text-warning">Employee Table</h3>
     <div class="border p-3">
-        <a class="btn btn-warning bg-primary btn-info block-lg" href="{% url 'add_employee' %}">Add</a>
+        <a class="btn btn-warning bg-primary btn-info block-lg" href="{% url 'homebook-employee_update' %}">Add</a>
         <form action="" method="POST">
             {% csrf_token %}
 
@@ -28,14 +28,12 @@
                 <th>Other Names</th>
                 <th>Last Name</th>
                 <th>Pay Amount</th>
-                <th>Timestamp Last Updated</th>
                 <th>Company</th>
-                <th>Employee Email</th>
-                <th>Employee phone</th>                <th>Update</th>
+                <th>Update</th>
                 <th>Delete</th>
             </tr>
 
-            {% for e in Employee %}
+            {% for note in Employee %}
 
             <tr>
 
@@ -44,6 +42,40 @@
                 <td>{{note.Other_names}}</td>
                 <td>{{note.last_name}}</td>
                 <td>{{note.pay_amt}}</td>
+                <td>{{note.company}}</td>
+                <td><a class="btn btn-info btn-block bg-primary btn btn-info"
+                       href="{% url 'employee-update' note.id %}">Edit</a></td>
+                <td><a class="btn btn-info btn-block bg-danger btn btn-info"
+                       href="{% url 'employee-delete' note.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+
+            <tr>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+                <th>#</th>
+            </tr>
+        </table>
+          <table class="table id=Employee align-middle text-warning bg-dark">
+            <tr>
+                <th>Timestamp Last Updated</th>
+                <th>Timestamp Added</th>
+                <th>Employee Email</th>
+                <th>Employee phone</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+
+            {% for note in Employee %}
+
+            <tr>
+
+
                 <td>{{note.timestamp_last_updated}}</td>
                 <td>{{note.timestamp_added}}</td>
                 <td>{{note.employee_email}}</td>
@@ -56,7 +88,6 @@
             {% endfor %}
 
             <tr>
-                <th>#</th>
                 <th>#</th>
                 <th>#</th>
                 <th>#</th>
