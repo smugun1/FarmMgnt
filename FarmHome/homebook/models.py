@@ -40,3 +40,17 @@ class CashBreakdown(models.Model):
 
     def __str__(self):
         return str(self.cashBreakdown_date)
+
+    # you override the save method and calculate for opening
+    # def save(self, *args, **kwargs):
+    #     self.One_thousands = self.amount % 1000;
+    #     self.Five_hundreds = self.amount % 1000 / 500;
+    #     self.Two_hundreds = self.amount % 1000 % 500 / 200;
+    #     self.One_hundreds = self.amount % 1000 % 500 % 200 / 100;
+    #     self.Fifties = self.amount % 1000 % 500 % 200 % 100 / 50;
+    #     self.Forties = self.amount % 1000 % 500 % 200 % 100 % 50 / 40;
+    #     self.Twenties = self.amount % 1000 % 500 % 200 % 100 % 50 % 40 / 20;
+    #     self.Tens = self.amount % 1000 % 500 % 200 % 100 % 50 % 40 % 20 / 10;
+    #     self.Fives = self.amount % 1000 % 500 % 200 % 100 % 50 % 40 % 20 % 10 / 5;
+    #     self.Ones = self.amount % 1000 % 500 % 200 % 100 % 50 % 40 % 20 % 10 % 5 / 1;
+    #     super(CashBreakdown, self).save(*args, **kwargs)

@@ -39,12 +39,12 @@
 
             <tr>
 
-                <td>{{amount}}</td>
-                <td>{{One_thousands}}</td>
-                <td>{{Five_hundreds}}</td>
-                <td>{{Two_hundreds}}</td>
-                <td>{{One_hundreds}}</td>
-                <td>{{Fifties}}</td>
+                <td>{{results.amount}}</td>
+                <td>{{results.One_thousands}}</td>
+                <td>{{results.Five_hundreds}}</td>
+                <td>{{results.Two_hundreds}}</td>
+                <td>{{results.One_hundreds}}</td>
+                <td>{{results.Fifties}}</td>
 
                 <td><a class="btn btn-info btn-block bg-primary btn btn-info"
                        href="{% url 'Results-update' id %}">Edit</a></td>
@@ -63,11 +63,11 @@
             </tr>
             {% for result in CashBreakdownCalc %}
             <tr>
-                <td>{{Forties}}</td>
-                <td>{{Twenties}}</td>
-                <td>{{Tens}}</td>
-                <td>{{Fives}}</td>
-                <td>{{Ones}}</td>
+                <td>{{results.Forties}}</td>
+                <td>{{results.Twenties}}</td>
+                <td>{{results.Tens}}</td>
+                <td>{{results.Fives}}</td>
+                <td>{{results.Ones}}</td>
                 <td><a class="btn btn-info btn-block bg-primary btn btn-info"
                        href="{% url 'Results-update' .id %}">Edit</a></td>
                 <td><a class="btn btn-info btn-block bg-danger btn btn-info"

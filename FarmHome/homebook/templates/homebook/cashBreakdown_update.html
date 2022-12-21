@@ -8,10 +8,10 @@
 
 <div class="row g-4 d-flex align-items-center">
     <div class="col-lg-8 d-none d-lg-flex">
-        <div class="container fluid bg-success text-light" style="width: 30rem;">
-            <div class="card card bg-dark text-right" style="width: 25rem;">
-                <h2 class="text-center text-warning">Cash Breakdown Table Update</h2>
-                <h3 class="text-center text-warning">Cash Breakdown Update</h3>
+        <div class="container fluid bg-dark text-light" style="width: 30rem;">
+            <div class="card card bg-warning text-right" style="width: 25rem;">
+                <h2 class="text-center text-dark">Cash Breakdown Table</h2>
+                <h3 class="text-center text-dark">Cash Breakdown Update</h3>
                 <form action="{% url 'homebook-cashBreakdown_create' %}" method="POST">
                     {% csrf_token %}
                     {{ form }}
@@ -28,7 +28,7 @@
                             </strong></label>
                             <input style="height:40px;width:300px" type="number" min="0" max="1000001"
                                    class="form-control" id="formGroupExampleInput3" placeholder="amount"
-                                   name="amount" value="">
+                                   name="amount" value="{{amount.amount}}">
                         </div>
 
                         <div class="col-sm col-sm">
@@ -45,7 +45,7 @@
                                    class="form-label"><strong>Five_hundreds</strong></label>
                             <input style="height:40px;width:300px" type="number" min="0" max="10001"
                                    class="form-control" id="formGroupExampleInput5" placeholder="Five_hundreds"
-                                   name="Five_hundreds" value="">
+                                   name="Five_hundreds" value="{{Five_hundreds.Five_hu}}">
                         </div>
 
                         <div class="col-sm col-sm">
@@ -53,28 +53,28 @@
                                    class="form-label"><strong>Two_hundreds</strong></label>
                             <input style="height:40px;width:300px" type="number" min="0" max="10001"
                                    class="form-control" id="formGroupExampleInput6" placeholder="Two_hundreds"
-                                   name="Two_hundreds" value="">
+                                   name="Two_hundreds" value="{{Two_hundreds.Two_hu}}">
                         </div>
                         <div class="col-sm col-sm">
                             <label for="formGroupExampleInput7"
                                    class="form-label"><strong>One_hundreds</strong></label>
                             <input style="height:40px;width:300px" type="number" min="0" max="10001"
                                    class="form-control" id="formGroupExampleInput7" placeholder="One_hundreds"
-                                   name="One_hundreds" value="">
+                                   name="One_hundreds" value="{{One_hundreds.One_hu}}">
                         </div>
                         <div class="col-sm col-sm">
                             <label for="formGroupExampleInput8"
                                    class="form-label"><strong>Fifties</strong></label>
                             <input style="height:40px;width:300px" type="number" min="0" max="1001"
                                    class="form-control" id="formGroupExampleInput8" placeholder="Fifties"
-                                   name="Fifties" value="">
+                                   name="Fifties" value="{{Fifties.sh}}">
 
                             <div class="col-sm col-sm">
                                 <label for="formGroupExampleInput9"
                                        class="form-label"><strong>Forties</strong></label>
                                 <input style="height:40px;width:300px" type="number" min="0" max="1001"
                                        class="form-control" id="formGroupExampleInput9" placeholder="Forties"
-                                       name="Forties" value="">
+                                       name="Forties" value="{{Forties.sh}}">
                             </div>
                             <div class="col-sm col-sm">
                                 <label for="formGroupExampleInput10"
@@ -82,14 +82,14 @@
                                 <input style="height:40px;width:300px" type="number" min="0" max="1001"
                                        class="form-control"
                                        id="formGroupExampleInput10" placeholder="Twenties"
-                                       name="Twenties" value="">
+                                       name="Twenties" value="{{Twenties.sh}}">
                             </div>
                             <div class="col-sm col-sm">
                                 <label for="formGroupExampleInput11"
                                        class="form-label"><strong>Tens</strong></label>
                                 <input style="height:40px;width:300px" type="number" min="0" max="101"
                                        class="form-control" id="formGroupExampleInput11"
-                                       placeholder="Tens" name="Tens" value="">
+                                       placeholder="Tens" name="Tens" value="{{Tens.sh}}">
                             </div>
                             <div class="col-sm col-sm">
                                 <label for="formGroupExampleInput12"
@@ -97,7 +97,7 @@
                                 </strong></label>
                                 <input style="height:40px;width:300px" type="number" min="0" max="101"
                                        class="form-control" id="formGroupExampleInput12" placeholder="Fives"
-                                       name="Fives" value="">
+                                       name="Fives" value="Fives.sh">
                             </div>
                             <div class="col-sm col-sm">
                                 <label for="formGroupExampleInput13"
@@ -105,14 +105,14 @@
                                 </strong></label>
                                 <input style="height:40px;width:300px" type="number" min="0" max="11"
                                        class="form-control" id="formGroupExampleInput13" placeholder="Ones"
-                                       name="Ones" value="">
+                                       name="Ones" value="{{One.sh}}">
                             </div>
 
                             <div class="container my-3">
                                 <button class="btn btn-info" type="submit" value="Update" name="update"
                                         typeof="hover">Submit
                                 </button>
-                                <a class="btn btn-warning bg-warning btn-info block-lg"
+                                <a class="btn btn-warning bg-success btn-info block-lg"
                                    href="{% url 'homebook-cashBreakdown' %}">Return</a>
                             </div>
                         </div>

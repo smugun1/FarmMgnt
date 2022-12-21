@@ -1,9 +1,10 @@
+from django.contrib import messages
 from django.db.models import Sum, F
 from django.shortcuts import render, redirect
 from django.views.decorators.cache import never_cache
-from decimal import Decimal
+
 from . import models
-from .forms import TaskForm, UpdateCashBreakdownForm, UpdateEmployeeForm
+from .forms import TaskForm, UpdateCashBreakdownForm, UpdateEmployeeForm, CashBreakdownCalcForm
 from .models import *
 
 
@@ -22,6 +23,24 @@ def Dashboard(request):
 
     }
     return render(request, 'homebook/dashboard.html', context)
+
+
+def Calculations(request):
+    context = {
+        "name": {"calculations"},
+
+    }
+    return render(request, 'homebook/calculations.html', context)
+
+
+def Add_record(request):
+    form = CashBreakdownCalcForm(request.POST)
+    if request.method == 'POST':
+
+        if form.is_valid():
+            form.save()
+            form = CashBreakdownCalcForm()
+    return render(request, 'homebook/calculations.html', {'form': form})
 
 
 def Employee(request):
@@ -108,7 +127,7 @@ def CashBreakdownTable(request):
     # calculate the change from each denomination
     note = CashBreakdown.objects.all()
     cashBreakdown_date = models.DateTimeField()
-    amount = CashBreakdown.objects.filter()
+    amount = CashBreakdown.objects.all()
     One_thousands = F(amount) % F(1000)
     Five_hundreds = F(amount) % F(1000) / F(500)
     Two_hundreds = F(amount) % F(1000) % F(500) / F(200)
@@ -141,17 +160,61 @@ def CashBreakdownTable(request):
 
 @never_cache
 def CashBreakdownUpdate(request):
-    amount = models.DecimalField()
-    One_thousands = models.IntegerField()
-    Five_hundreds = models.IntegerField()
-    Two_hundreds = models.IntegerField()
-    One_hundreds = models.IntegerField()
-    Fifties = models.IntegerField()
-    Forties = models.IntegerField()
-    Twenties = models.IntegerField()
-    Tens = models.IntegerField()
-    Fives = models.IntegerField()
-    Ones = models.IntegerField()
+    amount = CashBreakdown.objects.all()
+    if amount is None:
+        amount = 0
+    else:
+        amount = CashBreakdown.objects.all()
+    One_thousands = F(amount) % F(1000)
+    if One_thousands is None:
+        One_thousands = 0
+    else:
+        One_thousands = F(amount) % F(1000)
+    Five_hundreds = F(amount) % F(1000) / F(500)
+    if Five_hundreds is None:
+        Five_hundreds = 0
+    else:
+        Five_hundreds = F(amount) % F(1000) / F(500)
+    Two_hundreds = F(amount) % F(1000) % F(500) / F(200)
+    if Two_hundreds is None:
+        Two_hundreds = 0
+    else:
+        Two_hundreds = F(amount) % F(1000) % F(500) / F(200)
+    One_hundreds = F(amount) % F(1000) % F(500) % F(200) / F(100)
+    if One_hundreds is None:
+        One_hundreds = 0
+    else:
+        One_hundreds = F(amount) % F(1000) % F(500) % F(200) / F(100)
+    Fifties = F(amount) % F(1000) % F(500) % F(200) % F(100) / F(50)
+    if Fifties is None:
+        Fifties = 0
+    else:
+        Fifties = F(amount) % F(1000) % F(500) % F(200) % F(100) / F(50)
+    Forties = F(amount) % F(1000) % F(500) % F(200) % F(100) % F(50) / F(40)
+    if Forties is None:
+        Forties = 0
+    else:
+        Forties = F(amount) % F(1000) % F(500) % F(200) % F(100) % F(50) / F(40)
+    Twenties = F(amount) % F(1000) % F(500) % F(200) % F(100) % F(50) % F(40) / F(20)
+    if Twenties is None:
+        Twenties = 0
+    else:
+        Twenties = F(amount) % F(1000) % F(500) % F(200) % F(100) % F(50) % F(40) / F(20)
+    Tens = F(amount) % F(1000) % F(500) % F(200) % F(100) % F(50) % F(40) % F(20) / F(10)
+    if Tens is None:
+        Tens = 0
+    else:
+        Tens = F(amount) % F(1000) % F(500) % F(200) % F(100) % F(50) % F(40) % F(20) / F(10)
+    Fives = F(amount) % F(1000) % F(500) % F(200) % F(100) % F(50) % F(40) % F(20) % F(10) / F(5)
+    if Fives is None:
+        Fives = 0
+    else:
+        Fives = F(amount) % F(1000) % F(500) % F(200) % F(100) % F(50) % F(40) % F(20) % F(10) / F(5)
+    Ones = F(amount) % F(1000) % F(500) % F(200) % F(100) % F(50) % F(40) % F(20) % F(10) % F(5) / F(1)
+    if Ones is None:
+        Ones = 0
+    else:
+        Ones = F(amount) % F(1000) % F(500) % F(200) % F(100) % F(50) % F(40) % F(20) % F(10) % F(5) / F(1)
 
     context = {
         "note": CashBreakdown,
@@ -233,6 +296,15 @@ def CashBreakdownTotal(request):
 
 
 @never_cache
+def Results(request):
+    context = {
+        "name": {"Results Page"},
+
+    }
+    return render(request, 'homebook/results.html', context)
+
+
+@never_cache
 def CashBreakdownCalc(request):
     amount = request.POST.get('amount')
     One_thousands = request.POST.get('One_thousands')
@@ -291,15 +363,6 @@ def CashBreakdownCalc(request):
     else:
         res = "Only digits are allowed"
         return render(request, "homebook/input.html", {"results": res})
-
-
-@never_cache
-def Results(request):
-    context = {
-        "name": {"Results Page"},
-
-    }
-    return render(request, 'homebook/results.html', context)
 
 
 @never_cache

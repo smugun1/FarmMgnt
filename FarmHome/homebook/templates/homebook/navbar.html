@@ -3,14 +3,15 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                {% if not user.is_authenticated %}
+                {% if user.is_authenticated %}
                 <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
                 <li class="nav-item"><a class="nav-link active" href="{% url 'homebook-employee' %}">Employee</a></li>
                 <li class="nav-item"><a class="nav-link active" href="{% url 'homebook-cashBreakdown' %}">Cash Breakdown
                     Table</a></li>
                 <li class="nav-item"><a class="nav-link active" href="{% url 'homebook-cashBreakdown_results' %}">Results</a></li>
-                <li class="nav-item"><a class="nav-link active" href=""></a></li>
+                <li class="nav-item"><a class="nav-link active" href="{% url 'homebook-add_record' %}">Add Record</a></li>
                 <li class="nav-item"><a class="nav-link active" href="{% url 'homebook-dashboard' %}">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link active" href="{% url 'homebook-calculations' %}">Calculatons</a></li>
                 {% endif %}
             </ul>
         </div>

@@ -56,24 +56,10 @@
             <tr>
 
                 <th>Totals</th>
-                <td id="Amount.">
-                    Total:
-                </td>
-                <td id="Thousands">
-                    Total:
-                </td>
-                <td id="Five_hundreds">
-                    Total:
-                </td>
-                <td id="Two_hundreds">
-                    Total:
-                </td>
-                <td id="One_hundreds">
-                    Total:
-                </td>
-                <td id="Fifties">
-                    Total:
-                </td>
+                <th>{}</th>
+                <th></th>
+                <th></th>
+                <th></th>
                 <th></th>
                 <th></th>
             </tr>
@@ -106,30 +92,20 @@
             </tr>
             {% endfor %}
 
-            <tr>
-                <td>Total Amount</td>
-                <td>#{{Total_amt.total}}</td>
-            </tr>
+
             <tr>
                 <th>Totals</th>
-                <td id="Amount">
-                    Total:
-                </td>
-               <td id="Forties">
-                    Total:
-                </td>
-                <td id="Twenties">
-                    Total:
-                </td>
-                <td id="Tens">
-                    Total:
-                </td>
-                <td id="Fives">
-                    Total:
-                </td>
-                <td id="Ones">
-                    Total:
-                </td>
+                 <th>{{amount.amount}}</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+                <tr>
+                <td>Total Amount</td>
+                <td>#{{Total_amt.total}}</td>
             </tr>
         </table>
        </div>

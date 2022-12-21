@@ -2,15 +2,15 @@
 
 {% load static %}
 
-{% block title %}Cash Breakdown Update Table{% endblock %}
+{% block title %}Cash Breakdown Update TablE{% endblock %}
 
 {% block body %}
 <div class="row g-0 d-flex align-items-center">
     <div class="col-lg-4 d-none d-lg-flex">
         <div class="container fluid bg-info text-light" style="width: 3rem;">
             <div class="card card bg-primary text-right" style="width: 50rem;">
-                <h2 class="text-center text-light">Cash Breakdown Update Table</h2>
-                <h3 class="text-center text-light">Cash Breakdown Update Table</h3>
+                <h2 class="text-center text-light">Cash Breakdown Table</h2>
+                <h3 class="text-center text-light">Cash Breakdown Update</h3>
                 <form action="{% url 'homebook-cashBreakdown_create' %}" method="POST">
                     {% csrf_token %}
                     {{ form }}
@@ -23,53 +23,12 @@
 
 
                     <div class="col-sm col-sm">
-                        <label for="formGroupExampleInput2" class="form-label"><strong>Money Notes</strong></label>
-                        <select style="height:40px;width:300px" class="form-control" id="formGroupExampleInput2"
-                                name="money_Notes">
-                            <div class="col-sm-3">
-                                <option selected disabled>choose option</option>
-                                <option value="Thousands">1000</option>
-                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">
-                                <option selected disabled>choose option</option>
-                                <option value="Five_hundreds">500</option>
-                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">
-                                <option selected disabled>choose option</option>
-                                <option value="Two_hundreds">200</option>
-                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">
-                                <option selected disabled>choose option</option>
-                                <option value="One_hundreds">100</option>
-                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">
-                                <option selected disabled>choose option</option>
-                                <option value="Fifties">50</option>
-                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">
-                                <option selected disabled>choose option</option>
-                                <option value="Forties">40</option>
-                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">
-                                <option selected disabled>choose option</option>
-                                <option value="Twenties">20</option>
-                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">
-                                <option selected disabled>choose option</option>
-                                <option value="Tens">10</option>
-                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">
-                                <option selected disabled>choose option</option>
-                                <option value="Fives">5</option>
-                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">
-                                <option selected disabled>choose option</option>
-                                <option value="Ones">1</option>
-                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">
-                                <option selected disabled>choose option</option>
-                            </div>
-                        </select>
-
-
-                        <div class="col-sm col-sm">
                         <label for="formGroupExampleInput3" class="form-label"><strong>Amount
                         </strong></label>
                         <input style="height:40px;width:300px" type="number" min="0" max="1000001"
                                class="form-control"
                                id="formGroupExampleInput3"
                                placeholder="amount" name="amount" value="">
-
                     </div>
 
                     <div class="col-sm col-sm">
@@ -81,11 +40,10 @@
                                placeholder="One_thousands" name="One_thousands" value="">
                     </div>
 
-
                     <div class="col-sm col-sm">
                         <label for="formGroupExampleInput5" class="form-label"><strong>Five_hundreds
                         </strong></label>
-                         <input style="height:40px;width:300px" type="number" min="0" max="10001"
+                        <input style="height:40px;width:300px" type="number" min="0" max="10001"
                                class="form-control"
                                id="formGroupExampleInput5"
                                placeholder="Five_hundreds" name="Five_hundreds" value="">
@@ -94,11 +52,12 @@
                     <div class="col-sm col-sm">
                         <label for="formGroupExampleInput6" class="form-label"><strong>Two_hundreds
                         </strong></label>
-                         <input style="height:40px;width:300px" type="number" min="0" max="10001"
+                        <input style="height:40px;width:300px" type="number" min="0" max="10001"
                                class="form-control"
                                id="formGroupExampleInput6"
                                placeholder="Two_hundreds" name="Two_hundreds" value="">
                     </div>
+
                     <div class="col-sm col-sm">
                         <label for="formGroupExampleInput7" class="form-label"><strong>One_hundreds
                         </strong></label>
@@ -107,56 +66,59 @@
                                id="formGroupExampleInput7"
                                placeholder="One_hundreds" name="One_hundreds" value="">
                     </div>
+
                     <div class="col-sm col-sm">
                         <label for="formGroupExampleInput8" class="form-label"><strong>Fifties
                         </strong></label>
-                       <input style="height:40px;width:300px" type="number" min="0" max="10001"
+                        <input style="height:40px;width:300px" type="number" min="0" max="10001"
                                class="form-control"
                                id="formGroupExampleInput8"
                                placeholder="Fifties" name="Fifties" value="">
-                        </select>
                     </div>
+
                     <div class="col-sm col-sm">
                         <label for="formGroupExampleInput9" class="form-label"><strong>Forties
                         </strong></label>
-                       <input style="height:40px;width:300px" type="number" min="0" max="10001"
+                        <input style="height:40px;width:300px" type="number" min="0" max="10001"
                                class="form-control"
                                id="formGroupExampleInput9"
                                placeholder="Forties" name="Forties" value="">
                     </div>
+
                     <div class="col-sm col-sm">
                         <label for="formGroupExampleInput10" class="form-label"><strong>Twenties
                         </strong></label>
-                       <input style="height:40px;width:300px" type="number" min="0" max="10001"
+                        <input style="height:40px;width:300px" type="number" min="0" max="10001"
                                class="form-control"
                                id="formGroupExampleInput10"
                                placeholder="Twenties" name="Twenties" value="">
                     </div>
+
                     <div class="col-sm col-sm">
                         <label for="formGroupExampleInput11" class="form-label"><strong>Tens
                         </strong></label>
-                       <input style="height:40px;width:300px" type="number" min="0" max="10001"
+                        <input style="height:40px;width:300px" type="number" min="0" max="10001"
                                class="form-control"
                                id="formGroupExampleInput11"
                                placeholder="Tens" name="Tens" value="">
                     </div>
+
                     <div class="col-sm col-sm">
                         <label for="formGroupExampleInput12" class="form-label"><strong>Fives
                         </strong></label>
-                       <input style="height:40px;width:300px" type="number" min="0" max="10001"
+                        <input style="height:40px;width:300px" type="number" min="0" max="10001"
                                class="form-control"
                                id="formGroupExampleInput12"
                                placeholder="Fives" name="Fives" value="">
                     </div>
+
                     <div class="col-sm col-sm">
                         <label for="formGroupExampleInput13" class="form-label"><strong>Ones
                         </strong></label>
-                       <input style="height:40px;width:300px" type="number" min="0" max="10001"
+                        <input style="height:40px;width:300px" type="number" min="0" max="10001"
                                class="form-control"
                                id="formGroupExampleInput13"
                                placeholder="Ones" name="Ones" value="">
-
-
                     </div>
 
                     <div class="container my-3">
@@ -174,65 +136,107 @@
     </div>
 </div>
 
-                                        <option selected disabled>choose option</option>
-                                        <option value="Thousands">1000</option>
-                                        <option value="Five_hundreds">500</option>
-                                        <option value="Two_hundreds">200</option>
-                                        <option value="One_hundreds">100</option>
-                                        <option value="Fifties">50</option>
-                                        <option value="Forties">40</option>
-                                        <option value="Twenties">20</option>
-                                        <option value="Tens">10</option>
-                                        <option value="Fives">5</option>
-                                        <option value="Ones">1</option>
-     <label for="formGroupExampleInput2" class="form-label"><strong>Money Notes</strong></label>
-                            <select style="height:40px;width:300px" class="form-control" id="formGroupExampleInput2"
-                                    name="money_Notes">
 
-                                <option selected disabled>choose option</option>
-                                <option value="Choose Notes">Notes</option>
-                                <option value="Choose Coins">Coins</option>
-                                <option value="Choose Notes and Coins">Notes and Coins</option>
-                            </select>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">1000</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                <label class="form-check-label" for="inlineCheckbox2">500</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">200</label>
-                            </div>
-                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-                                <label class="form-check-label" for="inlineCheckbox1">100</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-                                <label class="form-check-label" for="inlineCheckbox2">50</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
-                                <label class="form-check-label" for="inlineCheckbox3">40</label>
-                            </div>
-                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
-                                <label class="form-check-label" for="inlineCheckbox1">20</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
-                                <label class="form-check-label" for="inlineCheckbox2">10</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option9">
-                                <label class="form-check-label" for="inlineCheckbox3">5</label>
-                            </div>
-                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option10">
-                                <label class="form-check-label" for="inlineCheckbox3">1</label>
-                            </div>
 {% endblock %}
+<!--<option selected disabled>choose option</option>-->
+<!--<option value="Thousands">1000</option>-->
+<!--<option value="Five_hundreds">500</option>-->
+<!--<option value="Two_hundreds">200</option>-->
+<!--<option value="One_hundreds">100</option>-->
+<!--<option value="Fifties">50</option>-->
+<!--<option value="Forties">40</option>-->
+<!--<option value="Twenties">20</option>-->
+<!--<option value="Tens">10</option>-->
+<!--<option value="Fives">5</option>-->
+<!--<option value="Ones">1</option>-->
+<!--<label for="formGroupExampleInput2" class="form-label"><strong>Money Notes</strong></label>-->
+<!--<select style="height:40px;width:300px" class="form-control" id="formGroupExampleInput2"-->
+<!--        name="money_Notes">-->
+
+<!--    <option selected disabled>choose option</option>-->
+<!--    <option value="Choose Notes">Notes</option>-->
+<!--    <option value="Choose Coins">Coins</option>-->
+<!--    <option value="Choose Notes and Coins">Notes and Coins</option>-->
+<!--</select>-->
+
+<!--<div class="form-check form-check-inline">-->
+<!--    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">-->
+<!--    <label class="form-check-label" for="inlineCheckbox1">1000</label>-->
+<!--</div>-->
+<!--<div class="form-check form-check-inline">-->
+<!--    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">-->
+<!--    <label class="form-check-label" for="inlineCheckbox2">500</label>-->
+<!--</div>-->
+<!--<div class="form-check form-check-inline">-->
+<!--    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">-->
+<!--    <label class="form-check-label" for="inlineCheckbox3">200</label>-->
+<!--</div>-->
+<!--<div class="form-check form-check-inline">-->
+<!--    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">-->
+<!--    <label class="form-check-label" for="inlineCheckbox1">100</label>-->
+<!--</div>-->
+<!--<div class="form-check form-check-inline">-->
+<!--    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">-->
+<!--    <label class="form-check-label" for="inlineCheckbox2">50</label>-->
+<!--</div>-->
+<!--<div class="form-check form-check-inline">-->
+<!--    <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">-->
+<!--    <label class="form-check-label" for="inlineCheckbox3">40</label>-->
+<!--</div>-->
+<!--<div class="form-check form-check-inline">-->
+<!--    <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">-->
+<!--    <label class="form-check-label" for="inlineCheckbox1">20</label>-->
+<!--</div>-->
+<!--<div class="form-check form-check-inline">-->
+<!--    <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">-->
+<!--    <label class="form-check-label" for="inlineCheckbox2">10</label>-->
+<!--</div>-->
+<!--<div class="form-check form-check-inline">-->
+<!--    <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option9">-->
+<!--    <label class="form-check-label" for="inlineCheckbox3">5</label>-->
+<!--</div>-->
+<!--<div class="form-check form-check-inline">-->
+<!--    <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option10">-->
+<!--    <label class="form-check-label" for="inlineCheckbox3">1</label>-->
+<!--</div>-->
+
+
+
+<!--                        <div class="col-sm col-sm">-->
+<!--                        <label for="formGroupExampleInput2" class="form-label"><strong>Money Notes</strong></label>-->
+<!--                        <select style="height:40px;width:300px" class="form-control" id="formGroupExampleInput2"-->
+<!--                                name="money_Notes">-->
+<!--                            <div class="col-sm-3">-->
+<!--                                <option selected disabled>choose option</option>-->
+<!--                                <option value="Thousands">1000</option>-->
+<!--                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">-->
+<!--                                <option selected disabled>choose option</option>-->
+<!--                                <option value="Five_hundreds">500</option>-->
+<!--                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">-->
+<!--                                <option selected disabled>choose option</option>-->
+<!--                                <option value="Two_hundreds">200</option>-->
+<!--                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">-->
+<!--                                <option selected disabled>choose option</option>-->
+<!--                                <option value="One_hundreds">100</option>-->
+<!--                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">-->
+<!--                                <option selected disabled>choose option</option>-->
+<!--                                <option value="Fifties">50</option>-->
+<!--                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">-->
+<!--                                <option selected disabled>choose option</option>-->
+<!--                                <option value="Forties">40</option>-->
+<!--                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">-->
+<!--                                <option selected disabled>choose option</option>-->
+<!--                                <option value="Twenties">20</option>-->
+<!--                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">-->
+<!--                                <option selected disabled>choose option</option>-->
+<!--                                <option value="Tens">10</option>-->
+<!--                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">-->
+<!--                                <option selected disabled>choose option</option>-->
+<!--                                <option value="Fives">5</option>-->
+<!--                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">-->
+<!--                                <option selected disabled>choose option</option>-->
+<!--                                <option value="Ones">1</option>-->
+<!--                                <input style="height:40px;width:300px" type="number" min="0" max="1000001">-->
+<!--                                <option selected disabled>choose option</option>-->
+<!--                            </div>-->
+<!--                        </select>-->

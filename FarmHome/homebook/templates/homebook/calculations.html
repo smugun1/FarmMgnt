@@ -1,0 +1,74 @@
+{% extends 'homebook/base.html' %}
+{{ form.media }}
+{% load static %}
+
+
+<title>{% block title %}Cash Breakdown Table{% endblock %}</title>
+
+<link rel='stylesheet' href="{% static 'style.css' %}" type='text/css'>
+
+<div class="container-fluid text-right card bg-info card-dark mx-0 px-0 my-0 py-0">
+
+
+{% block body %}
+<input id='cashBreakdown_date' ...>
+<input id='amount' ...>
+<input id='One_thousands' ...>
+<input id='Five_hundreds' ...>
+<input id='Two_hundreds' ...>
+<input id='One_hundreds' ...>
+<input id='Fifties' ...>
+<input id='Forties' ...>
+<input id='Twenties' ...>
+<input id='Tens' ...>
+<input id='Fives' ...>
+<input id='Ones' ...>
+
+
+  <script>
+    // Get the input elements by targeting their id:
+    const gross_input = document.getElementById('cashBreakdown_date');
+    const tier_input = document.getElementById('amount');
+    const net_input = document.getElementById('One_thousands');
+    const gross_input = document.getElementById('Five_hundreds');
+    const tier_input = document.getElementById('Two_hundreds');
+    const net_input = document.getElementById('One_hundreds');
+    const gross_input = document.getElementById('Fifties');
+    const tier_input = document.getElementById('Forties');
+    const net_input = document.getElementById('Twenties');
+    const gross_input = document.getElementById('Tens');
+    const tier_input = document.getElementById('Fives');
+    const net_input = document.getElementById('Ones');
+
+    // Create variables for what the user inputs, and the output:
+    let cashBreakdown_date = 0;
+    let amount = 0;
+    let One_thousands = 0;
+    let Five_hundreds = 0;
+    let Two_hundreds = 0;
+    let One_hundreds = 0;
+    let Fifties = 0;
+    let Forties = 0;
+    let Twenties = 0;
+    let Tens = 0;
+    let Fives = 0;
+    let Ones = 0;
+
+    // Add an event listener to 'listen' to what the user types into the inputs:
+    gross_input.addEventListener('input', e => {
+      gross = e.target.value;
+      updateNet()
+    });
+    tier_input.addEventListener('input', e => {
+      tier = e.target.value;
+      updateNet()
+    });
+
+    // Update the value of net based on what the user inputs in for gross and tier
+    function updateNet(e) {
+        net = gross - tier;
+        net_input.value = net;
+    }
+</script>
+</div>
+{% endblock  %}
